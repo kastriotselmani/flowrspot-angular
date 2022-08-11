@@ -1,0 +1,213 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img alt="FlowrSpot" src="assets/img/old.png" /> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav Montserrat">
+      <li class="nav-item"><a class="nav-link">Flowers</a></li>
+      <li class="nav-item"><a class="nav-link">Latest Sightings</a></li>
+      <li class="nav-item"><a class="nav-link">Favorites</a></li>
+      <li *ngIf="!isAuthenticated" class="nav-item" (click)="openLoginModal(undefined)"><a
+          class="nav-link login">Login</a>
+      </li>
+      <li *ngIf="!isAuthenticated" class="nav-item" (click)="openRegisterModal()"><a class="nav-link highlight">
+          New Account</a></li>
+      <li *ngIf="isAuthenticated" class="nav-item"><a class="nav-link">{{this.userDetailsData?.first_name}}
+          {{this.userDetailsData?.last_name}}</a></li>
+      <li *ngIf="isAuthenticated" class="nav-item"><a class="nav-link profile-image"
+          (click)="openUserDetailsModal(true)"><img alt="" src="assets/img/nav-profile.png" /></a></li>
+    </ul>
+  </div>
+
+</nav>
+
+<!--Search-->
+<header class="masthead text-center text-white d-flex" tabindex="-1">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="Montserrat">
+          Discover flowers around you
+        </h1>
+      </div>
+      <div class="col-lg-12 mx-auto">
+        <p class="Playfair mb-5">Explore between more than 8.427 sightings</p>
+      </div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="search" placeholder="Looking for something specific?"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button"><i class="fa fa-search mt-3"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<!--Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content content2">
+      <div class="modal-body">
+        <div class="text-center">
+          <h2>Welcome Back</h2>
+          <div [formGroup]="user" class="form-group col-md-12">
+            <div class="form-group">
+              <div class="d-flex flex-column input-style">
+                <label class="control-label">Email</label>
+                <input formControlName="email" type="text" name="email" class="form-control" id="email" />
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="d-flex flex-column input-style">
+                <label class="control-label">Password</label>
+                <input formControlName="password" name="password" type="password" class="form-control" id="password" />
+              </div>
+            </div>
+            <br>
+            <div *ngIf="!isLoginSuccessfully" class="btnlogin">
+              <button [disabled]="!user.valid" (click)="login()" class="btn-primary btn col-md-12">Login to your
+                Account</button>
+            </div>
+            <div *ngIf="isLoginSuccessfully" class="form-group">
+              <label>Congratulations! You have successfully logged into FlowrSpot!</label>
+              <button (click)="closeLoginModal()" class="btn-primary btn col-md-12">OK
+              </button>
+              <button (click)="openUserDetailsModal(true)" class="btn-primary btn col-md-12 mt-2">Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" (click)="closeRegisterModal()" class="lblregister">
+      <label>I don't want to Login</label>
+    </a>
+  </div>
+</div>
+
+<!--Register Modal-->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="holder mt-3">
+          <h2>Create an Account</h2>
+          <div [formGroup]="registerUser" class="form-group">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <div class="input-style">
+                  <label class="control-label">First Name</label>
+                  <input formControlName="first_name" autoFocus type="text" name="firstName" class="form-control"
+                    id="firstName" />
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <div class="input-style">
+                  <label class="control-label">Last Name</label>
+                  <input formControlName="last_name" type="text" name="lastName" class="form-control" id="lastName" />
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="input-style text-left">
+                <label class="control-label">Date of Birth Name</label>
+                <input formControlName="date_of_birth" type="date" name="dateOfBirth" class="form-control"
+                  id="dateOfBirth" />
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="input-style text-left">
+                <label class="control-label">Email</label>
+                <input formControlName="email" type="text" name="email" class="form-control" id="email" />
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="input-style text-left">
+                <label class="control-label">Password</label>
+                <input formControlName="password" class="form-control" name="password" type="password" />
+              </div>
+            </div>
+            <br>
+            <div *ngIf="!isRegisteredSuccessfully" class="form-group">
+              <button [disabled]="!registerUser.valid" (click)="register()" class="btn-primary btn col-md-12">Create
+                Account</button>
+            </div>
+            <div *ngIf="isRegisteredSuccessfully" class="form-group">
+              <label>Congratulations! You have successfully signed up for FlowrSpot!</label>
+              <button (click)="openLoginModal(true)" class="btn-primary btn col-md-12">OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" (click)="closeRegisterModal()" class="lblregister">I don’t want to register</a>
+  </div>
+</div>
+
+<!--User Details Modal-->
+<div class="modal fade" id="userDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="closeModalbtn">
+          <a (click)="closeUserDetailsModal()">X</a>
+        </div>
+
+        <div class="parent row">
+          <div class="child">
+            <div class="img-wrapper">
+              <img alt="" src="../../assets/img/modal-profile.png" class="img-circle img-responsive" />
+            </div>
+            <div class="child-dsc">
+              <p>
+                {{this.userDetailsData?.first_name}} {{this.userDetailsData?.last_name}}
+              </p>
+              <label class="costumlbl">103 sightings</label>
+            </div>
+          </div>
+          <div class="profileName">
+            <label>First Name</label>
+            <p>
+              {{this.userDetailsData?.first_name}}
+            </p>
+          </div>
+          <div class="profileName">
+            <label>Last Name</label>
+            <p>
+              {{this.userDetailsData?.last_name}}
+            </p>
+          </div>
+          <div class="profileName">
+            <label>Date of Birth</label>
+            <p>
+              May 20, 1980
+            </p>
+          </div>
+          <div class="profileName">
+            <label>Email</label>
+            <p>
+              michael.berry@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="btnlogout">
+          <button (click)="logout()" class="btn btn-primary">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

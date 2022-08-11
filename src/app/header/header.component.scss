@@ -1,0 +1,297 @@
+.navbar {
+  margin-left: 30px;
+  margin-right: 30px;
+  align-items: center;
+}
+
+.nav-item a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #949ea0 !important;
+  padding: 18px 40px !important;
+  white-space: nowrap;
+}
+
+.nav-item a:hover {
+  color: #df9186 !important;
+}
+
+.nav-item a.highlight {
+  border-radius: 50px;
+  background-color: #eaa79e;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  color: white !important;
+}
+
+.nav-item a.profile-image {
+  padding: 0 !important;
+}
+
+.nav-item a.highlight:hover {
+  opacity: 0.8;
+}
+
+.Montserrat {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 40px;
+  /* identical to box height, or 100% */
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.Playfair {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  /* identical to box height, or 100% */
+  text-align: center;
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+}
+
+.btn-outline-secondary:hover {
+  background-color: white !important;
+}
+
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: #FFFFFF;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: transparent !important;
+}
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: url(../../assets/img/pl-hero.png);
+  background-position: center center;
+  background-size: cover;
+}
+
+input{
+  color: #949ea0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.input-group-append {
+  background-color: white !important;
+  border-radius: .25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.input-group-append .fa-search {
+  color: #eaa79e;
+  font-size: 20px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.input-group .btn {
+  border: none;
+  display: flex;
+}
+
+#search {
+  width: 600px;
+  height: 70px;
+  background: #FFFFFF;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.input-group>.form-control,
+.input-group>.form-select,
+.input-group>.form-floating {
+  position: relative;
+  flex: 0 auto;
+  width: 1%;
+  min-width: 0;
+}
+
+.lblregister {
+  color: white;
+  display: flex;
+  font-size: 13px;
+  line-height: 13px;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  a label {
+    cursor: pointer;
+  }
+}
+
+.closeModalbtn {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  color: #949ea0;
+  font-size: 26px;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.content2 {
+  margin-top: 200px;
+}
+
+.btnLogout {
+  width: 147.5px !important;
+  height: 50px;
+  border-radius: 3px;
+}
+
+
+.pltext {
+  margin-left: 20px;
+}
+
+.profileName p {
+  font-size: 25px;
+  font-weight: 300;
+  color: #334144;
+  margin: 0 0 0 0;
+  padding: 0;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.profileName label {
+  font-size: 13px;
+  color: #949ea0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.closeProfileModal {
+  position: absolute;
+  right: 45px;
+  top: 30px;
+  color: #949ea0;
+  font-size: 26px;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.spacer-modal {
+  height: 60px;
+}
+
+.img-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.btnlogout {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  h2{
+    margin-bottom: 40px;
+  }
+}
+
+input {
+  background-color: transparent;
+  border: 0;
+  height: 20px;
+  font-size: 13px;
+  color: #334144;
+  padding: 0;
+}
+
+input:focus {
+  background-color: transparent;
+}
+
+.input-style {
+  border-radius: 3px;
+  background-color: #f5f6f7;
+  padding: 7px 15px;
+  border: 1px solid #dfe5ea;
+}
+
+.input-style label {
+  text-align: left;
+  font-size: 10px;
+  font-weight: normal;
+  color: #949ea0;
+  margin: 0;
+}
+
+.parent {
+  padding: 30px;
+  align-items: center;
+}
+
+.child {
+  display: flex;
+  flex-direction: row;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 25px;
+  /* identical to box height, or 100% */
+  color: #334144;
+}
+
+.child-dsc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p{
+    margin: 0;
+  }
+  margin-left: 20px;
+}
+
+.costumlbl {
+  font-size: 13px;
+  font-weight: 300;
+  color: #949ea0;
+  padding: 0;
+}

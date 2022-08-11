@@ -1,0 +1,30 @@
+  <div class="row p-4">
+    <div *ngFor="let item of flowers" class="col-lg-3 p-1">
+      <div class="flower-box">
+        <img width="100%" [src]="item.profile_picture" class="img-fluid" />
+        <div class="gradient">
+          <div class="flowerbox-right">
+            <button *ngIf="isAuthenticated" (click)="updateFavoriteFlower(item)"
+              [ngClass]="{'change-color': item.favorite}" class="btn btn-default edit-image-btn pull-right">
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="flower-box-content">
+            <div class="flower-name">
+              {{item.name}}
+            </div>
+            <div class="flower-description">
+              {{item.latin_name}}
+            </div>
+            <div class="text-center">
+              <label [ngClass]="{'change-color': item.favorite}" class="highlight">
+                {{item.sightings}} sightings
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>

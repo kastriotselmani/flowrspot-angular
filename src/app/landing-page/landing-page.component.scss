@@ -1,0 +1,94 @@
+.flower-box {
+  position: relative;
+  height: 350px;
+
+}
+
+.flower-box img {
+  border-radius: 3px;
+  height: 100%;
+}
+
+.flower-box .gradient {
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.flowerbox-right {
+  float: right;
+}
+
+.flower-box-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.flower-box-content {
+  display: flex;
+}
+
+.flower-box .flower-box-content .flower-name {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 0.75;
+  color: white;
+}
+
+.flower-box .flower-box-content .flower-description {
+  opacity: 0.7;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: italic;
+  color: white;
+  margin-top: 7px;
+}
+
+.flower-box .highlight {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  font-weight: normal;
+  color: white;
+  padding: 7px 15px;
+  margin-top: 15px;
+}
+
+.row {
+  --bs-gutter-x: 0;
+}
+
+.edit-image-btn {
+  float: right;
+  background: #FFFFFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  margin: 20px;
+}
+
+.edit-image-btn i {
+  color: #D4D8D9;
+}
+
+.change-color {
+  background: linear-gradient(270deg, #ECBCB3 0%, #EAA79E 100%);
+  box-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);
+
+  i {
+    color: #FFFFFF;
+  }
+}

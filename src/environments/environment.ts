@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://flowrspot-api.herokuapp.com/api/v1/',
+  auth_token: 'AUTH_TOKEN'
 };
 
 /*
